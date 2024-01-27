@@ -1,19 +1,14 @@
 import React from "react";
-//import ReactDOM from "react-dom";
-import Body from "./components/Body";
 import Header from "./components/Header";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
- const AppLayout = () => {
+const AppLayout = () => {
   return (
     <div className="app">
       <Header />
-      <Body />
+      <Outlet />
     </div>
   );
 };
 
 export default AppLayout;
-
-//const root = ReactDOM.createRoot(document.getElementById("root"));
-
-//root.render(<AppLayout></AppLayout>);

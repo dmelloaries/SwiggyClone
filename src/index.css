@@ -89,7 +89,9 @@
   justify-content: center;
 }
 
-
+.search{
+  cursor: pointer;
+}
 
 
 
