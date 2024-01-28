@@ -19,6 +19,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Body from "./components/Body.jsx";
 import Error from "./components/Error";
+
 //import { RouterProvider, createBrowserRouter } from "react-router-dom";
 // );
 const appRouter = createBrowserRouter([
@@ -28,7 +29,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body></Body>,
+        element: <Body/>,
         errorElement: <Error></Error>,
       },
       {

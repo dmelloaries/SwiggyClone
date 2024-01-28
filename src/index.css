@@ -1,16 +1,21 @@
 
-.header{
+/* .header{
   display: flex;
   justify-content: space-between;
-  border: 0.5pt solid black;
+ // border: 0.5pt solid black;
   
+} */
+.header {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow effect */
 }
 
 .logo{
   
-  width: 100px;
+  width: 250px;
   height: 80px;
- 
+ cursor: pointer;
 }
 .Navbar>ul{
   display: flex;
@@ -21,6 +26,7 @@
 .Navbar>ul>li{
   padding: 10px;
   margin: 10px;
+  cursor: pointer;
 }
 .Navbar>ul>button{
   margin: 5px;
