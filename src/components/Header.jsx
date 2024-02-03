@@ -24,6 +24,34 @@ const Header = () => {
           </Link>
         </div>
         <div className="">
+          {/* <ul className="flex m-4 space-x-7">
+        <li>
+          <div className="magnifying glass leading-loose"></div>
+        </li>
+        
+        <li>
+          <Link to="/Search">Search</Link>
+        </li>
+        <li>
+          <Link to="/">Home </Link>
+        </li>
+        <li>
+          <Link to="/Contact">Contact Us</Link>
+        </li>
+        <li>
+          <Link to="/cart">Cart</Link>
+        </li>
+        <button
+          className="login"
+          onClick={() => {
+            btnNameReact === "Login"
+              ? setBtnNameReact("Logout")
+              : setBtnNameReact("Login");
+          }}
+        >
+          {btnNameReact}
+        </button>
+      </ul> */}
           <ul className="text-zinc-700 ml-auto gap-2 md:gap-4 items-center hidden md:flex">
             <li>
               <Link
@@ -68,8 +96,23 @@ const Header = () => {
               >
                 <ShoppingBagIcon className="w-4 h-4 text-gray-700" />{" "}
                 <p className="hidden md:block">Cart</p>
+                {
+                  // <p className='absolute -top-1 -right-1 bg-orange-500 text-white flex justify-center items-center w-5 h-5 text-xs rounded-full'>
+                  //   {items.length}
+                  // </p>
+                }
               </Link>
             </li>
+            <button
+              className="login"
+              onClick={() => {
+                btnNameReact === "Login"
+                  ? setBtnNameReact("Logout")
+                  : setBtnNameReact("Login");
+              }}
+            >
+              {btnNameReact}
+            </button>
           </ul>
         </div>
       </div>
