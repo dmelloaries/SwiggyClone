@@ -2,12 +2,12 @@ import { LOGO_URL } from "../utils/constants"; //named export
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import {
-  Bars3Icon,
+  //Bars3Icon,
   BuildingOfficeIcon,
-  ChevronDownIcon,
+ // ChevronDownIcon,
   HomeIcon,
   MagnifyingGlassIcon,
-  MapPinIcon,
+  //MapPinIcon,
   PhoneIcon,
   ShoppingBagIcon,
 } from "@heroicons/react/24/solid";
@@ -23,35 +23,7 @@ const Header = () => {
             <img className="w-48" alt="Logo" src={LOGO_URL} />
           </Link>
         </div>
-        <div className="">
-          {/* <ul className="flex m-4 space-x-7">
-        <li>
-          <div className="magnifying glass leading-loose"></div>
-        </li>
-        
-        <li>
-          <Link to="/Search">Search</Link>
-        </li>
-        <li>
-          <Link to="/">Home </Link>
-        </li>
-        <li>
-          <Link to="/Contact">Contact Us</Link>
-        </li>
-        <li>
-          <Link to="/cart">Cart</Link>
-        </li>
-        <button
-          className="login"
-          onClick={() => {
-            btnNameReact === "Login"
-              ? setBtnNameReact("Logout")
-              : setBtnNameReact("Login");
-          }}
-        >
-          {btnNameReact}
-        </button>
-      </ul> */}
+        <div className="">       
           <ul className="text-zinc-700 ml-auto gap-2 md:gap-4 items-center hidden md:flex">
             <li>
               <Link

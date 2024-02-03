@@ -4,6 +4,8 @@ import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MENU_API} from "../utils/constants";
 import { Link } from "react-router-dom";
+import MockRes from "./MockRes";
+import Footer from "./Footer";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -49,6 +51,7 @@ const Body = () => {
   return listofRestaurants.length === 0 ? (
     <Shimmer></Shimmer>
   ) : (
+    <div>
     <div className="bg-white">
       <div className="flex justify-between items-center p-4">
         <div className="flex w-1/2">
@@ -78,7 +81,7 @@ const Body = () => {
       </div>
 
       <div className=" font-bold m-4">
-        <h1 className="h-8">Top Restaurants Near You</h1>
+        <h1 className="h-8">Top Restaurants Chains Near You</h1>
       </div>
       <div>
         <div className="res-container scroll-smooth focus:scroll-auto flex overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
@@ -89,6 +92,15 @@ const Body = () => {
           ))}
         </div>
       </div>
+    </div>
+    <br className="shadow-xl"></br>
+    <div>
+      <MockRes></MockRes>
+
+    </div>
+    <div>
+      <Footer></Footer>
+    </div>
     </div>
   );
 };
