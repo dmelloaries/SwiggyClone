@@ -131,7 +131,7 @@ const resList = [
       area: "Nanpura",
       totalRatingsString: "50+ ratings",
       cloudinaryImageId: "bvr70adr30ejyr5ua79k",
-      cuisines: ["Pizzas"],
+      cuisines: ["Pizzas", "Shakes,Burgers"],
       tags: [],
       costForTwo: 30000,
       costForTwoString: "₹300 FOR TWO",
@@ -240,8 +240,7 @@ const resList = [
     },
     subtype: "basic",
   },
-  
-  
+
   {
     type: "restaurant",
     data: {

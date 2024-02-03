@@ -3,18 +3,17 @@ import { useState } from "react";
 import { CDN_URL } from "../utils/constants";
 
 const MockRes = () => {
-  const [data] = useState(MockData); // Assuming MockData is an array of restaurant objects
-
+  const [data] = useState(MockData); 
   return (
-    <div className="m-4">
+    <div className="mx-40">
         <br className="shadow-2xl"></br>
-        <div>
-            <h1>Restaurants with online food delivery</h1>
+        <div className="font-extrabold">
+            <h1 className="text-lg font-bold">Restaurants with online food delivery</h1>
         </div>
-    <div className="flex flex-wrap">
+    <div className="cursor-pointer flex flex-wrap">
       {data.map((restaurant) => (
         <div
-          key={restaurant.data.uuid} // Assuming uuid is a unique identifier for each restaurant
+          key={restaurant.data.uuid} 
           className="res-card flex-shrink-0 w-64 p-4 m-4 rounded-lg bg-white transition-transform hover:scale-105"
         >
           <img
@@ -29,8 +28,8 @@ const MockRes = () => {
           <h4 className="text-sm text-gray-600 mb-2 truncate">
             {restaurant.data.cuisines.join(", ")}
           </h4>
-          <h4>{restaurant.data.avgRating} ❇️</h4>
-          <h4>{`₹${restaurant.data.costForTwo/100} FOR TWO`}</h4>
+          <h4 className="font-semibold">{restaurant.data.avgRating} ❇️    {`₹${restaurant.data.costForTwo/100} FOR TWO`}</h4>
+          
         </div>
       ))}
     </div>
