@@ -100,7 +100,7 @@ const Body = () => {
                 }}
               />
               <button
-                className="bg-gray text-black px-4 py-2 rounded-r-3xl border border-gray-300 hover:bg-gray-400"
+                className="bg-gray text-black px-4 py-2 rounded-r-3xl border border-gray-300 hover:bg-gray-200"
                 onClick={handleSearch}
               >
                 Search
@@ -108,25 +108,25 @@ const Body = () => {
             </div>
 
             <button
-              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  hover:bg-gray-100  "
               onClick={handleFilterByRating}
             >
               Ratings 4.0+
             </button>
             <button
-              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm   hover:bg-gray-100 "
               onClick={handleFilterByPrice1}
             >
               Less than 300₹
             </button>
             <button
-              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  hover:bg-gray-100 "
               onClick={handleFilterByPrice2}
             >
               Less than 600₹
             </button>
             <button
-              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  hover:bg-gray-100 "
               onClick={handleFilterByVeg}
             >
               Pure Veg
