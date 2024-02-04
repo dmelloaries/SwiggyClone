@@ -20,24 +20,26 @@
 // export default RestaurantCategory;
 
 import React from "react";
-//import ItemList from "./ItemsList.jsx";
+import ItemList from "./ItemList.jsx";
 
 const RestaurantCategory = (props) => {
-  const handleClick = () => {
-    props.setShowItems();
-  };
+//   const handleClick = () => {
+//     props.setShowItems();
+//   };
   return (
-    <div className="mx-auto my-6 bg-gray-50 shadow-lg p-4 flex justify-between flex-col w-[800px]">
-      <div
+    <>
+    <div className="mx-auto my-4 bg-gray-50 shadow-lg p-4 flex justify-between flex-col w-[800px]">
+      {/* <div
         className="flex justify-between cursor-pointer"
         onClick={handleClick}
-      >
-        <h1 className="font-semibold text-lg">{props.cardData.title}</h1>
+      > */}
+        <h1 className="font-semibold ">{props?.cardData?.title}</h1>
         <p className="">˅</p>
       </div>
-      {/* {props.showItems && <ItemsList itemData={props.cardData.itemCards}/>} */}
-      {/* <ItemList items={props.cardData}></ItemList> */}
-    </div>
+      
+      <ItemList itemData={props.cardData.itemCards}></ItemList> 
+      </>
+    
   );
 };
 
