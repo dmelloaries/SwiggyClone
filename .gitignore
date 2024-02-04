@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+.Banner.jsx
+.BannerList.jsx
 
 # testing
 /coverage
