@@ -15,3 +15,8 @@ export const MENU_API =
   encodeURIComponent(
     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.4547767&lng=72.76143499999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
   );
+
+  export const IMG_URL = "https://media-assets.swiggy.com/swiggy/image/upload/";
+
+  export const CARD_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";

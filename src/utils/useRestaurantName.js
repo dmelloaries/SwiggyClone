@@ -3,6 +3,7 @@ import { useState } from "react";
 const useRestaurantName = (resId) => {
   useEffect(() => {
     fetchMenu();
+    // eslint-disable-next-line
   }, []);
 
   const [resInfo, setresInfo] = useState("");

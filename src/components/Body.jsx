@@ -1,17 +1,19 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import Shimmer from "../pages/Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { MENU_API } from "../utils/constants";
 import { Link } from "react-router-dom";
-import MockRes from "./MockRes";
-import Footer from "./Footer";
+import MockRes from "../pages/MockRes";
+import Footer from "../pages/Footer";
+import Carousel from "../pages/Carousel";
 //import BannerList from "./BannerList";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [carouselCards, setCarouselCards] = useState([]);
   const onlineStatus = useOnlineStatus();
 
   useEffect(() => {
@@ -32,6 +34,9 @@ const Body = () => {
     );
     setFilteredRestaurant(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setCarouselCards(
+      json?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.info
     );
   };
 
@@ -80,7 +85,18 @@ const Body = () => {
   ) : (
     <div>
       {/* <BannerList></BannerList> */}
+      <Carousel carouselCards={carouselCards} />
+      <br className="shadow-xl"></br>
+      <div class="mx-40">
+        <div class="border-t-2 border-gray-300 shadow-md my-4 w-full"></div>
+      </div>
+
+
+     
       <div className="bg-white mx-40">
+        <br></br>
+        
+      
         <div className="mt-7">
           <div className="font-extrabold pl-4">
             <h1 className="text-2xl font-extrabold m-4">

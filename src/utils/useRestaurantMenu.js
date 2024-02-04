@@ -4,6 +4,7 @@ import { useState } from "react";
 const useRestaurantMenu = (resId) => {
   useEffect(() => {
     fetchMenu();
+    // eslint-disable-next-line
   }, []);
   const [resMenu, setResMenu] = useState([]);
   const fetchMenu = async () => {

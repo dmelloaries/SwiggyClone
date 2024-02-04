@@ -6,14 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import AppLayout from "./App.js";
-import Contact from "./components/Contact";
+import Contact from "./pages/Contact";
 import Body from "./components/Body.jsx";
-import Error from "./components/Error";
-import  Search  from "./components/Search.jsx"
-import Shimmer from "./components/Shimmer.jsx";
+import Error from "./pages/Error";
+import  Search  from "./pages/Search.jsx"
+import Shimmer from "./pages/Shimmer.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
 
-const About = lazy(() => import("./components/About"));
+const About = lazy(() => import("./pages/About"));
 
 const appRouter = createBrowserRouter([
   {
