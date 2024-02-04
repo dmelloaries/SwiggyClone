@@ -8,8 +8,8 @@ const MockRes = () => {
     <div className="mx-40">
       <br className="shadow-2xl"></br>
       <div className="font-extrabold pl-4">
-        <h1 className="text-lg font-bold m-4">
-          Restaurants with online food delivery in Mumbai
+        <h1 className="text-2xl font-black m-4">
+          Restaurants with online food delivery 
         </h1>
       </div>
 

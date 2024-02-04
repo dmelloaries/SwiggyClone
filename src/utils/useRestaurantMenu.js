@@ -1,30 +1,30 @@
-// import axios from "axios";
-// import { useEffect, useState } from "react";
-// import { GET_RESTAURANTS_URL } from "./constants";
+import { useEffect } from "react";
+import { useState } from "react";
 
-// const useRestaurantsMenu = (restId) => {
-//   const [restaurant, setRestaurant] = useState(null);
-//   const [isLoading, setIsLoading] = useState(true);
-//   const [error, setError] = useState(null);
+const useRestaurantMenu = (resId) => {
+  useEffect(() => {
+    fetchMenu();
+  }, []);
+  const [resMenu, setResMenu] = useState([]);
+  const fetchMenu = async () => {
+    const data = await fetch(
+      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.4805955&lng=88.41160649999999&restaurantId=${resId}`
+    );
 
-//   useEffect(() => {
-//     (async () => { 
-//       try {
-//         setIsLoading(true);
-//         const { data } = await axios.get(GET_RESTAURANTS_URL + `/${restId}`);
 
-//         // console.log(data?.data);
-//         setRestaurant(data?.data);
-//       } catch (err) {
-//         console.log(err.response);
-//         setError(err.response);
-//       } finally {
-//         setIsLoading(false);
-//       }
-//     })();
-//   }, []);
+    const datajson = await data.json();
+    
+    // console.log("Hello -> ",datajson.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
 
-//   return { restaurant, isLoading, error };
-// };
+    const categories = datajson.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter((c)=>
+      c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    )
 
-// export default useRestaurantsMenu;
+    console.log("Hola -> ", categories);
+
+    setResMenu(categories);
+  };
+  return resMenu;
+};
+
+export default useRestaurantMenu;

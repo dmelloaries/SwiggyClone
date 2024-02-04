@@ -44,16 +44,16 @@ const Search = ({ searchText, handleSearch }) => {
   };
 
   return (
-    <div className="flex w-1/2">
+    <div className="flex w-1/2 mx-20">
       <input
         type="text"
-        className="search-box mt-7 px-4 py-2 w-full border border-gray-300 rounded-l-md focus:border-black"
+        className="search-box mt-7 px-4 py-2 w-full border border-gray-300 rounded-l-3xl focus:border-black"
         placeholder="Search your favorite..."
         value={searchText}
         onChange={handleInputChange}
       />
       <button
-        className="bg-gray text-black mt-7 px-4 py-2 rounded-r-md border border-gray-300 hover:bg-blue-100"
+        className="bg-gray text-black mt-7 px-4 py-2 rounded-r-3xl border border-gray-300 hover:bg-blue-100"
         onClick={handleSearchClick}
       >
         Search

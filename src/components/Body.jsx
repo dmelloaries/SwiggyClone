@@ -28,10 +28,10 @@ const Body = () => {
     const json = await data.json();
 
     setListofRestaurants(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -83,7 +83,7 @@ const Body = () => {
       <div className="bg-white mx-40">
         <div className="mt-7">
           <div className="font-extrabold pl-4">
-            <h1 className="text-lg font-extrabold m-4">
+            <h1 className="text-2xl font-extrabold m-4">
               Top Restaurants Chains Near You
             </h1>
           </div>
