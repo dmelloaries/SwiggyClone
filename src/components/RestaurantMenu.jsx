@@ -9,6 +9,7 @@ const RestaurantMenu = () => {
 
   useEffect(() => {
     fetchMenu();
+    // eslint-disable-next-line
   }, []);
 
   const fetchMenu = async () => {

@@ -6,6 +6,7 @@ import { MENU_API } from "../utils/constants";
 import { Link } from "react-router-dom";
 import MockRes from "./MockRes";
 import Footer from "./Footer";
+//import BannerList from "./BannerList";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -47,18 +48,51 @@ const Body = () => {
     );
     setFilteredRestaurant(filteredList);
   };
+  const handleFilterByPrice1 = () => {
+    const filteredList = listofRestaurants.filter((res) => {
+      const costString = res.info.costForTwo;
+      const numericCost = parseInt(costString.replace(/[^\d]/g, ""), 10); // Extracting only the numeric part
 
+      return numericCost < 300;
+    });
+
+    setFilteredRestaurant(filteredList);
+  };
+  const handleFilterByPrice2 = () => {
+    const filteredList = listofRestaurants.filter((res) => {
+      const costString = res.info.costForTwo;
+      const numericCost = parseInt(costString.replace(/[^\d]/g, ""), 10); // Extracting only the numeric part
+
+      return numericCost < 600;
+    });
+
+    setFilteredRestaurant(filteredList);
+  };
+
+  const handleFilterByVeg = () => {
+    const filteredList = listofRestaurants.filter(
+      (res) => res.info.veg === true
+    );
+    setFilteredRestaurant(filteredList);
+  };
   return listofRestaurants.length === 0 ? (
     <Shimmer></Shimmer>
   ) : (
     <div>
+      {/* <BannerList></BannerList> */}
       <div className="bg-white mx-40">
         <div className="mt-7">
+          <div className="font-extrabold pl-4">
+            <h1 className="text-lg font-extrabold m-4">
+              Top Restaurants Chains Near You
+            </h1>
+          </div>
+
           <div className="flex justify-between items-center ">
             <div className="flex w-1/2">
               <input
                 type="text"
-                className="search-box px-4 py-2 w-full rounded-l-md border border-gray-300 focus:border-black"
+                className="search-box px-4 py-2 w-full rounded-l-3xl border border-gray-300 focus:border-black"
                 placeholder="Search your favorite restaurant..."
                 value={searchText}
                 onChange={(e) => {
@@ -66,7 +100,7 @@ const Body = () => {
                 }}
               />
               <button
-                className="bg-gray text-black px-4 py-2 rounded-r-md border border-gray-300 hover:bg-gray-400"
+                className="bg-gray text-black px-4 py-2 rounded-r-3xl border border-gray-300 hover:bg-gray-400"
                 onClick={handleSearch}
               >
                 Search
@@ -74,18 +108,36 @@ const Body = () => {
             </div>
 
             <button
-              className="bg-gray-500 text-white px-4 py-2 rounded-md ml-4 hover:bg-gray-600  "
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
               onClick={handleFilterByRating}
             >
-              Top Rated Restaurants
+              Ratings 4.0+
+            </button>
+            <button
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              onClick={handleFilterByPrice1}
+            >
+              Less than 300₹
+            </button>
+            <button
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              onClick={handleFilterByPrice2}
+            >
+              Less than 600₹
+            </button>
+            <button
+              className="bg-white text-black px-4 py-2 border border-gray-300 rounded-3xl ml-4 text-sm  "
+              onClick={handleFilterByVeg}
+            >
+              Pure Veg
             </button>
           </div>
         </div>
         <br></br>
 
-        <div className=" font-extrabold pl-4">
+        {/* <div className=" font-extrabold pl-4">
           <h1 className="text-lg font-bold">Top Restaurants Chains Near You</h1>
-        </div>
+        </div> */}
         <div>
           <div className="res-container scroll-smooth focus:scroll-auto flex overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
             {filteredRestaurant?.map((restaurant) => (
