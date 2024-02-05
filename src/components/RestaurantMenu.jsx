@@ -91,17 +91,19 @@ import useRestaurantName from "../utils/useRestaurantName";
 import RestaurantCategory from "./RestaurantCategory";
 import Shimmer from "../pages/Shimmer";
 
+
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resMenu = useRestaurantMenu(resId);
   const resInfo = useRestaurantName(resId);
   const [showIndex, setShowIndex] = useState(null);
 
-  console.log(resMenu);
+ 
 
   return (
     <div className="flex justify-center items-center mt-4 font-bold text-2xl flex-col">
       {!resInfo ? <Shimmer /> : null}
+      
       <h1>{resInfo}</h1>
       <ul>
         {resMenu.map((item, index) => (

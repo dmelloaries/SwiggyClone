@@ -1,26 +1,8 @@
-// import ItemList from "./ItemList";
-// const RestaurantCategory=({data,showItems,setShowIndexFxn})=>{
 
-//     const HandleClick=()=>{
-//        setShowIndexFxn();
-//     }
-//     return<div className="my-6 mx-auto bg-gray-100 shadow-lg p-4 w-6/12 ">
-//         <div className=" flex justify-between cursor-pointer hover:scale-105 duration-300"
-//         onClick={HandleClick}
-//         >
-//         <span className="font-semibold text-lg">{data?.title} ({data?.itemCards.length})</span>
-//         <span>▼</span>
-//         </div>
-//         <div>
-//         {showItems&&<ItemList items={data.itemCards} addButton={true}/>}
-//         </div>
-//     </div>
-
-// }
-// export default RestaurantCategory;
 
 import React from "react";
 import ItemList from "./ItemList.jsx";
+
 
 const RestaurantCategory = (props) => {
 //   const handleClick = () => {
@@ -28,14 +10,16 @@ const RestaurantCategory = (props) => {
 //   };
   return (
     <>
-    <div className="mx-auto my-4 bg-gray-50 shadow-lg p-4 flex justify-between flex-col w-[800px]">
+    <div className="">
       {/* <div
         className="flex justify-between cursor-pointer"
         onClick={handleClick}
       > */}
-        <h1 className="font-semibold ">{props?.cardData?.title}</h1>
-        <p className="">˅</p>
+        <h1 className="font-extrabold p-2 m-2 border-gray-400 border-b-2 mx-80">{props?.cardData?.title}</h1>
+        <p className="font-extrabold p-2 m-2 border-gray-400 border-b-2 mx-80">˅</p>
       </div>
+      
+
       
       <ItemList itemData={props.cardData.itemCards}></ItemList> 
       </>
