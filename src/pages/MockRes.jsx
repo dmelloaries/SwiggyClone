@@ -8,7 +8,7 @@ const MockRes = () => {
     <div className="mx-40">
       <br className="shadow-2xl"></br>
       <div className="font-extrabold pl-4">
-        <h1 className="text-2xl font-black m-4">
+        <h1 className="text-3xl font-bold m-4">
           Restaurants with online food delivery 
         </h1>
       </div>
@@ -25,10 +25,10 @@ const MockRes = () => {
               src={CDN_URL + restaurant.data.cloudinaryImageId}
             />
 
-            <h3 className="text-lg font-semibold mb-2 truncate">
+            <h3 className="text-xl text-gray-700 font-semibold mb-2 truncate">
               {restaurant.data.name}
             </h3>
-            <h4 className="font-semibold">
+            <h4 className="text-lg text-gray-700 font-semibold">
               {restaurant.data.avgRating} ❇️{" "}
               {`₹${restaurant.data.costForTwo / 100} FOR TWO`}
             </h4>

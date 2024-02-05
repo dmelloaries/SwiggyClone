@@ -42,7 +42,7 @@ const Carousel = ({ carouselCards }) => {
   return (
     <div className="w-full mx-auto h-64 flex flex-col my-4">
       <div className="flex items-center justify-between mt-10 px-4">
-        <h3 className="font-extrabold text-2xl  ml-40">What's on your mind?</h3>
+        <h3 className="font-bold text-3xl md-20 ml-40">              What's on your mind?</h3>
         <div className="flex gap-4">
           <Button
             onClick={movePrev}

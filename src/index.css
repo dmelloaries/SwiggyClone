@@ -17,7 +17,8 @@ h4,
 h5,
 h6,
 a {
-  font-family: 'Montserrat', sans-serif;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
 }
 
 Customize the scrollbar appearance

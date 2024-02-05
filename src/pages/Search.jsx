@@ -1,45 +1,33 @@
-// // Search.js
-// import React from "react";
+// Search Page ! not able to Load Restaurants , need some fix
 
-// const Search = ({ searchText,  handleSearch }) => {
-//   return (
-//     <div className="flex w-1/2">
-//       <input
-//         type="text"
-//         className="search-box mt-7 px-4 py-2 w-full border border-gray-300 rounded-l-md focus:border-black"
-//         placeholder="Search your favorite..."
-//         value={searchText}
-//         onChange={(e) => {
-//           searchText(e.target.value);
-//         }}
-//       />
-//       <button
-//         className="bg-gray text-black mt-7 px-4 py-2 rounded-r-md border border-gray-300 hover:bg-blue-100"
-//         onClick={handleSearch}
-//       >
-//         Search
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Search;
-// Search.js
 import React, { useState } from "react";
+import MockRes from "./MockRes";
 
-const Search = ({ searchText, handleSearch }) => {
+const Search = ({ handleSearch }) => {
   const [error, setError] = useState(null);
+  const [inputValue, setInputValue] = useState("");
+  const [filteredData, setFilteredData] = useState(null); 
 
   const handleInputChange = (e) => {
-    searchText(e.target.value);
-    setError(null); // Reset error when input changes
+    setInputValue(e.target.value);
+    setError(null); 
+    setFilteredData(null); 
   };
 
   const handleSearchClick = async () => {
     try {
-      await handleSearch();
+      const searchData = await handleSearch();
+      const searchTerm = inputValue.toLowerCase();
+
+      
+      const filteredResList = searchData.filter((restaurant) =>
+        restaurant.data.name.toLowerCase().includes(searchTerm)
+      );
+
+     
+      setFilteredData(filteredResList);
     } catch (error) {
-      setError("Error: Unable to fetch data. Please try again."); // Set error message
+      setError("Search From Home Page "); 
     }
   };
 
@@ -49,7 +37,7 @@ const Search = ({ searchText, handleSearch }) => {
         type="text"
         className="search-box mt-7 px-4 py-2 w-full border border-gray-300 rounded-l-3xl focus:border-black"
         placeholder="Search your favorite..."
-        value={searchText}
+        value={inputValue}
         onChange={handleInputChange}
       />
       <button
@@ -60,6 +48,9 @@ const Search = ({ searchText, handleSearch }) => {
       </button>
 
       {error && <p className="text-red-500 mt-2">{error}</p>}
+
+      
+      {filteredData && <MockRes data={filteredData} />}
     </div>
   );
 };

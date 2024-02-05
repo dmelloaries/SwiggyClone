@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withDiscountLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "../pages/Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import MockRes from "../pages/MockRes";
 import Footer from "../pages/Footer";
 import Carousel from "../pages/Carousel";
-//import BannerList from "./BannerList";
 
 const Body = () => {
   const [listofRestaurants, setListofRestaurants] = useState([]);
@@ -15,6 +14,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const [carouselCards, setCarouselCards] = useState([]);
   const onlineStatus = useOnlineStatus();
+  const DiscountedLabel = withDiscountLabel(RestaurantCard);
 
   useEffect(() => {
     fetchData();
@@ -84,23 +84,19 @@ const Body = () => {
     <Shimmer></Shimmer>
   ) : (
     <div>
-      {/* <BannerList></BannerList> */}
       <Carousel carouselCards={carouselCards} />
       <br className="shadow-xl"></br>
       <div class="mx-40">
         <div class="border-t-2 border-gray-300 shadow-md my-4 w-full"></div>
       </div>
 
-
-     
       <div className="bg-white mx-40">
         <br></br>
-        
-      
+
         <div className="mt-7">
           <div className="font-extrabold pl-4">
-            <h1 className="text-2xl font-extrabold m-4">
-              Top Restaurants Chains Near You
+            <h1 className="text-3xl font-bold m-4">
+              Top restaurant chains near you
             </h1>
           </div>
 
@@ -108,7 +104,7 @@ const Body = () => {
             <div className="flex w-1/2">
               <input
                 type="text"
-                className="search-box px-4 py-2 w-full rounded-l-3xl border border-gray-300 focus:border-black"
+                className="search-box px-4 py-2 w-full rounded-l-3xl border border-gray-300 focus:border-gray-500"
                 placeholder="Search your favorite restaurant..."
                 value={searchText}
                 onChange={(e) => {
@@ -151,9 +147,6 @@ const Body = () => {
         </div>
         <br></br>
 
-        {/* <div className=" font-extrabold pl-4">
-          <h1 className="text-lg font-bold">Top Restaurants Chains Near You</h1>
-        </div> */}
         <div>
           <div className="res-container scroll-smooth focus:scroll-auto flex overflow-x-auto p-4 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
             {filteredRestaurant?.map((restaurant) => (
@@ -161,7 +154,11 @@ const Body = () => {
                 key={restaurant.info.id}
                 to={"/restaurants/" + restaurant.info.id}
               >
-                <RestaurantCard resData={restaurant} />
+                {restaurant.info.aggregatedDiscountInfoV3 ? (
+                  <DiscountedLabel resData={restaurant} />
+                ) : (
+                  <RestaurantCard resData={restaurant} />
+                )}
               </Link>
             ))}
           </div>
