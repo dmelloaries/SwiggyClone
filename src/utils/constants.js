@@ -59,4 +59,6 @@ export const CARD_URL =
 // export const FETCH_MENU_URL =
 //   "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.624480699999991&&submitAction=ENTER&restaurantId=";
 
-export const FETCH_MENU_URL="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.4805955&lng=88.41160649999999&restaurantId=";
+//export const FETCH_MENU_URL="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.4805955&lng=88.41160649999999&restaurantId=";
+export const FETCH_MENU_URL =
+  "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.624480699999991&&submitAction=ENTER&restaurantId=";
