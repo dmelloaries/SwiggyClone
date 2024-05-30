@@ -4,10 +4,9 @@ import React from "react";
 import ItemList from "./ItemList.jsx";
 
 
+
 const RestaurantCategory = (props) => {
-//   const handleClick = () => {
-//     props.setShowItems();
-//   };
+
   return (
     <>
     <div className="">

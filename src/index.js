@@ -9,7 +9,7 @@ import AppLayout from "./App.js";
 import Contact from "./pages/Contact";
 import Body from "./components/Body.jsx";
 import Error from "./pages/Error";
-import  Search  from "./pages/Search.jsx"
+import Search from "./pages/Search.jsx";
 import Shimmer from "./pages/Shimmer.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
 
@@ -26,7 +26,7 @@ const appRouter = createBrowserRouter([
         errorElement: <Error></Error>,
       },
       {
-        path: "/About",
+        path: "/About", //Bundling is done here
         element: (
           <Suspense fallback={<Shimmer />}>
             <About />
@@ -45,8 +45,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "Search",
-        element:<Search />
-        ,
+        element: <Search />,
         errorElement: <Error></Error>,
       },
     ],

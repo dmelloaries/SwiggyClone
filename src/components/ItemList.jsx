@@ -1,4 +1,4 @@
-import { CDN_URL } from "../utils/constants";
+import { FETCH_MENU_URL } from "../utils/constants";
 
 const ItemList = ({ itemData }) => {
   return (
@@ -18,7 +18,7 @@ const ItemList = ({ itemData }) => {
                 Add +
               </button>
               <img
-                src={CDN_URL + item.card.info.imageId}
+                src={FETCH_MENU_URL + item.card.info.imageId}
                 alt="BrowseMenu"
                 className="w-60 h-40  rounded-3xl mx-80"
                 

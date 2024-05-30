@@ -1,31 +1,24 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom";
+import { FETCH_MENU_URL } from "./constants";
 
-const useRestaurantMenu = (resId) => {
-  useEffect(() => {
-    fetchMenu();
-    // eslint-disable-next-line
-  }, []);
-  const [resMenu, setResMenu] = useState([]);
-  const fetchMenu = async () => {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=22.4805955&lng=88.41160649999999&restaurantId=${resId}`
-    );
+const useRestaurantMenu = () => {
 
+    const [resInfo, setResInfo] = useState(null);
+    const {resId} = useParams();
 
-    const datajson = await data.json();
-    
-    // console.log("Hello -> ",datajson.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards);
+    useEffect(() => {
+        fetchData();
+    }, [])
 
-    const categories = datajson.data.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter((c)=>
-      c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-    )
+    const fetchData = async() => {
+        const data = await fetch(FETCH_MENU_URL+resId);
+        const json = await data.json();
+        // console.log(json);
+        setResInfo(json.data);
+    };
+    return resInfo;
+}
 
-    console.log("Hola -> ", categories);
-
-    setResMenu(categories);
-  };
-  return resMenu;
-};
 
 export default useRestaurantMenu;
