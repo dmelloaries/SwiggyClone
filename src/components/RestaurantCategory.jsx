@@ -9,9 +9,9 @@ const RestaurantCategory = ({ data, showItems, setShowIndex, index }) => {
         <div className="menu w-full">
             <div className="h-4  bg-[#F2F2F3] mx-auto "></div>
 
-            <div className="w-full p-2 cursor-pointer" onClick={handleClick}>
+            <div className="w-full p-2 cursor-pointer" >
                 {/* Header */}
-                <div className="w-full font-bold flex justify-between items-start">
+                <div className="w-full font-bold flex justify-between items-start"  onClick={handleClick}>
                     <span className="text-lg pb-4">
                         {data.title} ({data.itemCards.length})
                     </span>
