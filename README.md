@@ -1,6 +1,7 @@
 # Swiggy Clone
 
 ## To Clone Locally , Copy paste this command on your terminal
+
 git clone https://github.com/dmelloaries/SwiggyClone.git
 cd SwiggyClone
 npm i
