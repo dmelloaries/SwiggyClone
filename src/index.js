@@ -12,6 +12,7 @@ import Error from "./pages/Error";
 import Search from "./pages/Search.jsx";
 import Shimmer from "./pages/Shimmer.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
+import Cart from "./components/Cart.jsx";
 
 const About = lazy(() => import("./pages/About"));
 
@@ -46,6 +47,11 @@ const appRouter = createBrowserRouter([
       {
         path: "Search",
         element: <Search />,
+        errorElement: <Error></Error>,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
         errorElement: <Error></Error>,
       },
     ],

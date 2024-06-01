@@ -1,19 +1,19 @@
-import { LOGO_URL } from "../utils/constants"; //named export
+import { LOGO_URL } from "../utils/constants"; 
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
-import {
+import {BuildingOfficeIcon} from '@heroicons/react/24/solid';
+import {HomeIcon} from '@heroicons/react/24/solid';
+import {PhoneIcon} from '@heroicons/react/24/solid';
+import {ShoppingBagIcon} from '@heroicons/react/24/solid';
+import {MagnifyingGlassIcon} from '@heroicons/react/24/solid';
 
-  BuildingOfficeIcon,
-  // ChevronDownIcon,
-  HomeIcon,
-  MagnifyingGlassIcon,
-  //MapPinIcon,
-  PhoneIcon,
-  ShoppingBagIcon,
-} from "@heroicons/react/24/solid";
+
+
+import { useSelector } from "react-redux"; // Import useSelector
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
+  const cartItems = useSelector((store) => store.cart.items); // Use useSelector to get cart items
 
   return (
     <div className="drop-shadow-xl bg-white">
@@ -76,7 +76,7 @@ const Header = () => {
               >
                 <ShoppingBagIcon className="w-4 h-4 text-gray-700 group-hover:text-orange-500" />
                 <p className="hidden md:block group-hover:text-orange-500">
-                  Cart
+                  Cart ({cartItems.length})
                 </p>
               </Link>
             </li>

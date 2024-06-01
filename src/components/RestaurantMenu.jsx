@@ -1,11 +1,11 @@
 import { useState } from "react";
 import React from "react";
-import { useParams } from "react-router-dom";
+//import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
-import useRestaurantName from "../utils/useRestaurantName";
+//import useRestaurantName from "../utils/useRestaurantName";
 import RestaurantCategory from "./RestaurantCategory";
 import Shimmer from "../pages/Shimmer";
-import { FETCH_MENU_URL } from "../utils/constants";
+
 
 const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(null);
@@ -13,7 +13,9 @@ const RestaurantMenu = () => {
 
     if (resInfo === null) return <Shimmer />;
 
+    // eslint-disable-next-line
     const { name, cuisines, costForTwoMessage } = resInfo?.cards[2]?.card?.card?.info;
+    // eslint-disable-next-line
     const itemCards = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card;
 
     const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(item => {

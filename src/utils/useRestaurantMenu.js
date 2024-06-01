@@ -7,9 +7,14 @@ const useRestaurantMenu = () => {
     const [resInfo, setResInfo] = useState(null);
     const {resId} = useParams();
 
+
+    
     useEffect(() => {
         fetchData();
-    }, [])
+        // eslint-disable-next-line
+    }, []) 
+   
+    
 
     const fetchData = async() => {
         const data = await fetch(FETCH_MENU_URL+resId);
