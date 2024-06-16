@@ -26,13 +26,14 @@ const ItemList = ({ items }) => {
           </div>
           <div className="">
             <div className="relative flex flex-col items-center mb-4">
-              <div className="absolute bottom-0  text-[#3BA773] font-bold text-lg z-10 bg-w bg-white px-7 py-1 rounded-md shadow-lg">
+              <div className="absolute bottom-0 text-[#3BA773] font-bold text-lg z-10 bg-w bg-white px-7 py-1 rounded-md shadow-lg active:bg-gray-300">
                 <p className="px-3" onClick={() => handleAdd(item)}>
                   ADD
                 </p>
               </div>
 
-              <img 
+               
+              <img
                 src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/${item.card.info.imageId}`}
                 className="h-[144px] w-[156px] max-w-full rounded-lg my-4 bg-[#F6E6E9] "
                 alt="Item Image"
