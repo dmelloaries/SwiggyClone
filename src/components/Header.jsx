@@ -1,4 +1,5 @@
-import { LOGO_URL } from "../utils/constants"; 
+// import { LOGO_URL } from "../utils/constants"; 
+import  LOGO_URL  from  "../image.png";
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Import Link from React Router
 import {BuildingOfficeIcon} from '@heroicons/react/24/solid';
@@ -18,9 +19,9 @@ const Header = () => {
   return (
     <div className="drop-shadow-xl bg-white">
       <div className="flex justify-between items-center p-4">
-        <div className="logo-container">
+        <div className="logo-container ">
           <Link to="/">
-            <img className="w-48" alt="Logo" src={LOGO_URL} />
+            <img className="w-48 " alt="Logo" src={LOGO_URL} />
           </Link>
         </div>
         <div className="">

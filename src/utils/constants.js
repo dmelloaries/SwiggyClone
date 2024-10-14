@@ -1,5 +1,5 @@
 export const LOGO_URL =
-  "https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Swiggy_logo.svg/306px-Swiggy_logo.svg.png?20220725160748";
+  "https://www.google.com/imgres?q=swiggy%20logo&imgurl=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa0%2FSwiggy_Logo_2024.webp%2F800px-Swiggy_Logo_2024.webp.png&imgrefurl=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3ASwiggy_Logo_2024.webp&docid=-bKmghmRd5IwMM&tbnid=bYlrofjRLQPS-M&vet=12ahUKEwjzo4ncvo6JAxXsgK8BHdEvA4kQM3oECEgQAA..i&w=800&h=233&hcb=2&ved=2ahUKEwjzo4ncvo6JAxXsgK8BHdEvA4kQM3oECEgQAA";
 
 export const CDN_URL =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
