@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import dp from "../dp.png"; // Default profile image
+import { useNavigate } from "react-router-dom"; 
+import dp from "../dp.png"; 
 
 const Profile = () => {
   const [userDetails, setUserDetails] = useState({
@@ -9,15 +10,16 @@ const Profile = () => {
     profileImage: null,
   });
 
-  const [loading, setLoading] = useState(true); // Loading state
-  const [error, setError] = useState(""); // Error state
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(""); 
+
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
         const token = localStorage.getItem("token");
 
-        
         if (!token) {
           setError("No token found. Please log in.");
           setLoading(false);
@@ -46,6 +48,11 @@ const Profile = () => {
 
     fetchUserDetails();
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login"); 
+  };
 
   if (loading) {
     return (
@@ -106,6 +113,12 @@ const Profile = () => {
             </div>
           </div>
         </div>
+        <button
+          onClick={handleLogout}
+          className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
