@@ -13,16 +13,29 @@ import Search from "./pages/Search.jsx";
 import Shimmer from "./pages/Shimmer.jsx";
 import RestaurantMenu from "./components/RestaurantMenu.jsx";
 import Cart from "./components/Cart.jsx";
+import Signup from "./auth/Signup.jsx";
+import Login from "./auth/Login.jsx";
 
 const About = lazy(() => import("./pages/About"));
 
 const appRouter = createBrowserRouter([
+
+  {
+    path: "/",
+    element: <Signup/>,
+    errorElement: <Error></Error>,
+  },
+  {
+    path: "/login",
+    element: <Login/>,
+    errorElement: <Error></Error>,
+  },
   {
     path: "/",
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: "/home",
         element: <Body />,
         errorElement: <Error></Error>,
       },
@@ -45,10 +58,11 @@ const appRouter = createBrowserRouter([
         errorElement: <Error></Error>,
       },
       {
-        path: "Search",
+        path: "/Search",
         element: <Search />,
         errorElement: <Error></Error>,
       },
+     
       {
         path: "/cart",
         element: <Cart />,
