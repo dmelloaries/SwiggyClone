@@ -15,6 +15,7 @@ import RestaurantMenu from "./components/RestaurantMenu.jsx";
 import Cart from "./components/Cart.jsx";
 import Signup from "./auth/Signup.jsx";
 import Login from "./auth/Login.jsx";
+import Profile from "./pages/ProfilePage.jsx";
 
 const About = lazy(() => import("./pages/About"));
 
@@ -53,6 +54,11 @@ const appRouter = createBrowserRouter([
         errorElement: <Error></Error>,
       },
       {
+        path: "/profile",
+        element: <Profile/>,
+        errorElement: <Error></Error>,
+      },
+      {
         path: "/Restaurants/:resId",
         element: <RestaurantMenu></RestaurantMenu>,
         errorElement: <Error></Error>,
@@ -77,3 +83,4 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);
 
 reportWebVitals();
+
